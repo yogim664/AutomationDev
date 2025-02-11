@@ -8,7 +8,8 @@ console.log("test started");
 test("Create xlsx", async ({}) => {
   try {
     // Get the current date and time as a string
-    const currentDateTime = new Date().toLocaleString();
+    const options = { timeZone: 'Asia/Kolkata', hour12: true };
+    const currentDateTime = new Date().toLocaleString('en-IN', options);
     // Create a new Excel workbook
     const wb = XLSX.utils.book_new();
     // Create an empty worksheet
