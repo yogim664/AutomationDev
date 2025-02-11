@@ -4,6 +4,7 @@ import SPcredentials from "../credentials/SPcredentials";
 import axfoodCredentials from "../credentials/axfoodCredentials";
 const XLSX = require("xlsx");
 
+console.log("test started");
 test("Create xlsx", async ({}) => {
   try {
     // Get the current date and time as a string
@@ -24,7 +25,7 @@ test("Create xlsx", async ({}) => {
 });
 
 test("Download and Upload Report", async ({ page }) => {
-  try {
+  // try {
     // Navigate to the Axfood supplier portal
     await page.goto("https://leverantor.axfood.se/");
     await expect(page).toHaveTitle(/Axfood IT AB/);
@@ -112,7 +113,7 @@ test("Download and Upload Report", async ({ page }) => {
 
     // Verify file upload success
     await expect(page.getByRole("alert")).toBeVisible();
-  } catch (error) {
-    console.log("Error: ", error);
-  }
+  // } catch (error) {
+  //   console.log("Error: ", error);
+  // }
 });
