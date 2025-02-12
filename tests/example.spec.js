@@ -4,8 +4,10 @@ import SPcredentials from "../credentials/SPcredentials";
 import axfoodCredentials from "../credentials/axfoodCredentials";
 const XLSX = require("xlsx");
 
-console.log("test started");
 test("Create xlsx", async ({}) => {
+
+  
+console.log("date and time");
   try {
     // Get the current date and time as a string
     const options = { timeZone: 'Asia/Kolkata', hour12: true };
@@ -26,7 +28,11 @@ test("Create xlsx", async ({}) => {
 });
 
 test("Download and Upload Report", async ({ page }) => {
+  
+  console.log("download and upload");
   // try {
+
+  
     // Navigate to the Axfood supplier portal
     await page.goto("https://leverantor.axfood.se/");
     await expect(page).toHaveTitle(/Axfood IT AB/);
@@ -117,4 +123,7 @@ test("Download and Upload Report", async ({ page }) => {
   // } catch (error) {
   //   console.log("Error: ", error);
   // }
+
+
+  await page.close();
 });
